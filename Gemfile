@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Adds rspec
+  gem 'rspec-rails', '~> 3.0'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
@@ -46,4 +49,7 @@ group :development do
 
   # Adds bootstrap
   gem 'bootstrap-sass'
+
+  # Adds Devise authentication system
+  gem 'devise'
 end
