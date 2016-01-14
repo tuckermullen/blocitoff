@@ -1,6 +1,9 @@
 <h2>User</h2>
-  <div class="contrainer">
+  <div class="container">
     <ul>
       <li>User Email: <%= @user.email %></li>
     </ul>
   </div>
+
+<h3><%= @user.email %>'s Items</h3>
+  <%= render partial: 'items/form', locals: { items: @user.items } %>

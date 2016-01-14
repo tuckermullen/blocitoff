@@ -1,2 +1,9 @@
-<%= form_for [user, item] do |f| %>
-  
+<div class="form-group">
+  <%= form_for [user, item] do |f| %>
+  <%= f.item :items %>
+  <%= f.text_field :items,
+              class: 'form-control',
+              placeholder: "Enter items (separated by commas)",
+              value: items.map(&:name).join(', ') %>
+  <% end %>
+</div>
