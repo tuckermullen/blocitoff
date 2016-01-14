@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # /users/edit
+  get 'items/create'
 
-  resources :users
-  # /users/
-  # /users/:id
+  devise_for :users
+
+  resources :users do
+    resources :items, only: [:create]
+  end
 
   get 'welcome/index'
 
