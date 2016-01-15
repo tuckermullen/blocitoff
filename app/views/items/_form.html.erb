@@ -1,9 +1,6 @@
 <div class="form-group">
   <%= form_for [user, item] do |f| %>
-  <%= f.item :items %>
-  <%= f.text_field :items,
-              class: 'form-control',
-              placeholder: "Enter items (separated by commas)",
-              value: items.map(&:name).join(', ') %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter items (separated by commas)" %><br>
+    <%= f.submit "Save", class: 'btn btn-success' %>
   <% end %>
 </div>
