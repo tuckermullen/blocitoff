@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { User.create(email: "admin@blocitoff.com", password: "password", password_confirmation: "password") }
 
-
   context "signed in user" do
     describe "GET #show" do
       before do

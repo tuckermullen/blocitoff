@@ -7,10 +7,6 @@ Rails.application.routes.draw do
     resources :items, only: [:create]
     # POST '/users/:user_id/items', controller: 'items', action: 'create'
   end
-
   get 'welcome/index'
-
   root to: 'welcome#index'
-
-
 end

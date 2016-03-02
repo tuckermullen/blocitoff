@@ -1,6 +1,12 @@
-<div class="form-group">
-  <%= form_for [user, item] do |f| %>
-    <%= f.text_field :name, class: 'form-control', placeholder: "Enter items (separated by commas)" %><br>
+<% @items.each do |item| %>
+  <ul>
+    <li><%= item.name %></li>
+  </ul>
+<% end %>
+
+<%= form_for [@user, @item] do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter items (separated by commas)" %>
+  </div>
     <%= f.submit "Save", class: 'btn btn-success' %>
-  <% end %>
-</div>
+<% end %>

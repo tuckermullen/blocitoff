@@ -9,13 +9,7 @@
   <h5><%= @user.email %>'s Items</h5>
 <% end %>
 
-<% @items.each do |item| %>
-  <ul>
-    <li><%= item.name %></li>
-  </ul>
-<% end %>
-
-<% if current_user == @user %>
+<% if @user %>
   <h5>Add Item:</h5>
   <%= render partial: 'items/form', locals: { user: @user, item: @item } %>
 <% end %>
