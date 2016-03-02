@@ -1,6 +1,15 @@
 <h2>User</h2>
-  <div class="contrainer">
+  <div class="container">
     <ul>
       <li>User Email: <%= @user.email %></li>
     </ul>
   </div>
+
+<% unless @items.count == 0 %>
+  <h5><%= @user.email %>'s Items</h5>
+<% end %>
+
+<% if @user %>
+  <h5>Add Item:</h5>
+  <%= render partial: 'items/form', locals: { user: @user, item: @item } %>
+<% end %>
