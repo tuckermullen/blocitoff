@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :destroy]
     # POST '/users/:user_id/items', controller: 'items', action: 'create'
   end
   get 'welcome/index'
