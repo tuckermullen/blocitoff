@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
     @new_item = Item.new
 
     if @item.save
-      @item = Item.update_items(params[:items])
       flash[:notice] = "Item was saved successfully."
     else
       flash[:error] = "Error creating item. Please try again."
