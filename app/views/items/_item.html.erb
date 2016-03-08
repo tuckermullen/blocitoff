@@ -3,4 +3,5 @@
     <%= link_to "", [@user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
   <% end %>
   <%= item.name %>
+  | <%= time_left(item) %>
 </li>

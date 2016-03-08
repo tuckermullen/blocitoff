@@ -8,10 +8,8 @@
 <h5><%= @user.email %>'s Items</h5>
   <div>
     <% unless @items.count == 0 %>
-      <%#= render partial: 'items/item', locals: { user: @user, item: @item } %>
       <ul class='js-items'>
         <% @items.each do |item| %>
-          <%#= render(item) %>
           <%= render partial: 'items/item', locals: {item: item} %>
         <% end %>
       </ul>

@@ -6,4 +6,14 @@ class Item < ActiveRecord::Base
   end
 
   default_scope { order('created_at DESC') }
+
+  def expired?
+    remaining = (created_at - 7.days.ago)
+
+    if remaining < 0
+      true
+    else
+      false
+    end
+  end
 end
