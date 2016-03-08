@@ -2,25 +2,33 @@ class ItemsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @item = Item.new(item_params)
-    @item.user = current_user
+    @items = @user.items
+    @item = current_user.items.new(item_params)
+    @new_item = Item.new
+
     if @item.save
-      @item = Item.update_items(params[:items])
-      redirect_to @user, notice: "Item was saved successfully."
+      flash[:notice] = "Item was saved successfully."
     else
       flash[:error] = "Error creating item. Please try again."
-      render @user
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
 
     if @item.destroy
       flash[:notice] = "#{@item.name} was deleted successfully!"
-      redirect_to user_show_page
     else
       flash[:error] = "There was an error deleting the item."
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

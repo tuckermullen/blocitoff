@@ -1,5 +1,6 @@
-<% @items.each do |item| %>
-  <ul>
-    <li><%= item.name %></li>
-  </ul>
-<% end %>
+<li id="item-<%= item.id %>">
+  <% if current_user == @user %>
+    <%= link_to "", [@user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+  <% end %>
+  <%= item.name %>
+</li>
